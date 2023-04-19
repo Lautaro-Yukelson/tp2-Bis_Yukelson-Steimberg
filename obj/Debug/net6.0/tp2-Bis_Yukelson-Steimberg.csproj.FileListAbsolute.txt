@@ -1,0 +1,15 @@
+Z:\2023\Programacion\Github\tp2-Bis_Yukelson-Steimberg\obj\Debug\net6.0\tp2-Bis_Yukelson-Steimberg.csproj.AssemblyReference.cache
+Z:\2023\Programacion\Github\tp2-Bis_Yukelson-Steimberg\obj\Debug\net6.0\tp2-Bis_Yukelson-Steimberg.GeneratedMSBuildEditorConfig.editorconfig
+Z:\2023\Programacion\Github\tp2-Bis_Yukelson-Steimberg\obj\Debug\net6.0\tp2-Bis_Yukelson-Steimberg.AssemblyInfoInputs.cache
+Z:\2023\Programacion\Github\tp2-Bis_Yukelson-Steimberg\obj\Debug\net6.0\tp2-Bis_Yukelson-Steimberg.AssemblyInfo.cs
+Z:\2023\Programacion\Github\tp2-Bis_Yukelson-Steimberg\obj\Debug\net6.0\tp2-Bis_Yukelson-Steimberg.csproj.CoreCompileInputs.cache
+Z:\2023\Programacion\Github\tp2-Bis_Yukelson-Steimberg\bin\Debug\net6.0\tp2-Bis_Yukelson-Steimberg.exe
+Z:\2023\Programacion\Github\tp2-Bis_Yukelson-Steimberg\bin\Debug\net6.0\tp2-Bis_Yukelson-Steimberg.deps.json
+Z:\2023\Programacion\Github\tp2-Bis_Yukelson-Steimberg\bin\Debug\net6.0\tp2-Bis_Yukelson-Steimberg.runtimeconfig.json
+Z:\2023\Programacion\Github\tp2-Bis_Yukelson-Steimberg\bin\Debug\net6.0\tp2-Bis_Yukelson-Steimberg.dll
+Z:\2023\Programacion\Github\tp2-Bis_Yukelson-Steimberg\bin\Debug\net6.0\tp2-Bis_Yukelson-Steimberg.pdb
+Z:\2023\Programacion\Github\tp2-Bis_Yukelson-Steimberg\obj\Debug\net6.0\tp2-Bis_Yukelson-Steimberg.dll
+Z:\2023\Programacion\Github\tp2-Bis_Yukelson-Steimberg\obj\Debug\net6.0\refint\tp2-Bis_Yukelson-Steimberg.dll
+Z:\2023\Programacion\Github\tp2-Bis_Yukelson-Steimberg\obj\Debug\net6.0\tp2-Bis_Yukelson-Steimberg.pdb
+Z:\2023\Programacion\Github\tp2-Bis_Yukelson-Steimberg\obj\Debug\net6.0\tp2-Bis_Yukelson-Steimberg.genruntimeconfig.cache
+Z:\2023\Programacion\Github\tp2-Bis_Yukelson-Steimberg\obj\Debug\net6.0\ref\tp2-Bis_Yukelson-Steimberg.dll

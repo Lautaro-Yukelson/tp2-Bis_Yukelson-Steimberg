@@ -16,6 +16,7 @@ class Boxeador{
     public int obtenerSkill(){
         Random rnd = new Random();
         int r = rnd.Next(1, 11);
-        return (VelocidadPiernas + PotenciaGolpes + r);
+        int n = VelocidadPiernas + PotenciaGolpes + r;
+        return n;
     }
 }
