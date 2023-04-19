@@ -1,3 +1,8 @@
+class Globales
+{
+    public static List<Boxeador> listaBoxeadores = new List<Boxeador>();
+}
+
 class Boxeador
 {
     public string Nombre { get; set; }

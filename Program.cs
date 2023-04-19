@@ -1,11 +1,10 @@
 ﻿using System;
 
-List<Boxeador> listaBoxeadores = new List<Boxeador>();
 int opcion, cont = 0;
 
-menu(listaBoxeadores);
+menu();
 
-void menu(List<Boxeador> listaBoxeadores)
+void menu()
 {
     Console.Clear();
     Console.WriteLine("*************************************");
@@ -20,12 +19,12 @@ void menu(List<Boxeador> listaBoxeadores)
     switch (opcion)
     {
         case 1:
-            listaBoxeadores = ingresarBoxeadores(listaBoxeadores);
+            ingresarBoxeadores();
             cont++;
-            menu(listaBoxeadores);
+            menu();
             break;
         case 2:
-            if (cont >= 1) opcionesPeleas(listaBoxeadores);
+            if (cont >= 1) opcionesPeleas();
             else Console.WriteLine("No creaste ningun boxeador, por lo tanto no hay ganador.");
             break;
         case 3:
@@ -35,7 +34,7 @@ void menu(List<Boxeador> listaBoxeadores)
     }
 }
 
-void opcionesPeleas(List<Boxeador> listaBoxeadores)
+void opcionesPeleas()
 {
     Console.Clear();
     Console.WriteLine("************************************");
@@ -54,15 +53,15 @@ void opcionesPeleas(List<Boxeador> listaBoxeadores)
     switch (opcion)
     {
         case 1:
-            peleaFFA(listaBoxeadores);
-            menu(listaBoxeadores);
+            peleaFFA(Globales.listaBoxeadores);
+            menu();
             break;
         case 2:
-            peleaPersonalizada(listaBoxeadores);
-            menu(listaBoxeadores);
+            peleaPersonalizada();
+            menu();
             break;
         case 3:
-            menu(listaBoxeadores);
+            menu();
             break;
         case 4:
             Console.Clear();
@@ -72,7 +71,7 @@ void opcionesPeleas(List<Boxeador> listaBoxeadores)
     }
 }
 
-List<Boxeador> ingresarBoxeadores(List<Boxeador> listaBoxeadores)
+void ingresarBoxeadores()
 {
     int n = ingresarEntero("¿Cuantos boxeadores va a ingresar?");
     for (int i = 0; i < n; i++)
@@ -88,22 +87,20 @@ List<Boxeador> ingresarBoxeadores(List<Boxeador> listaBoxeadores)
         int vp = ingresarEntero("¿Cual es su velocidad de piernas?");
         while (vp < 1 || vp > 100) vp = ingresarEntero("Ingrese una velocidad de pierna valia (1-100)");
         Boxeador box = new Boxeador(nombre, pais, peso, pg, vp);
-        listaBoxeadores.Add(box);
+        Globales.listaBoxeadores.Add(box);
     }
-
-    return listaBoxeadores;
 }
 
-void peleaFFA(List<Boxeador> listaBoxeadores)
+void peleaFFA(List<Boxeador> listaParaPelear)
 {
     string nombreMejor = "";
     int mayorSkill = -1;
-    for (int i = 0; i < listaBoxeadores.Count(); i++)
+    for (int i = 0; i < listaParaPelear.Count(); i++)
     {
-        if (listaBoxeadores[i].obtenerSkill() > mayorSkill)
+        if (listaParaPelear[i].obtenerSkill() > mayorSkill)
         {
-            mayorSkill = listaBoxeadores[i].obtenerSkill();
-            nombreMejor = listaBoxeadores[i].Nombre;
+            mayorSkill = listaParaPelear[i].obtenerSkill();
+            nombreMejor = listaParaPelear[i].Nombre;
         }
     }
     Console.WriteLine("El Ganador es...");
@@ -112,11 +109,11 @@ void peleaFFA(List<Boxeador> listaBoxeadores)
     Console.ReadKey();
 }
 
-void peleaPersonalizada(List<Boxeador> listaBoxeadores)
+void peleaPersonalizada()
 {
     Console.Clear();
     int n = ingresarEntero("¿De cuantos boxeadores será la pelea?");
-    while (n > listaBoxeadores.Count())
+    while (n > Globales.listaBoxeadores.Count())
     {
         n = ingresarEntero("Numero invalido. Queres mas boxeadores de los que cargaste antes. Ingrese un numero valido");
     }
@@ -125,11 +122,11 @@ void peleaPersonalizada(List<Boxeador> listaBoxeadores)
     {
         Console.Clear();
         string nombre = ingresarTexto("Ingrese el nombre del boxeador numero " + (i + 1) + " | Igual que cuando lo creo");
-        for (int x = 0; x < listaBoxeadores.Count(); x++)
+        for (int x = 0; x < Globales.listaBoxeadores.Count(); x++)
         {
-            if (listaBoxeadores[x].Nombre == nombre)
+            if (Globales.listaBoxeadores[x].Nombre == nombre)
             {
-                listaParaPelear.Add(listaBoxeadores[x]);
+                listaParaPelear.Add(Globales.listaBoxeadores[x]);
             }
         }
     }
