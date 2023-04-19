@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "qobI/loDfZeh5yrT4g2rcvKFe0l08SHYO/aJ3W7gPlJxd9/TrE6IEsECuQrzQHWDRlHEgn8+VY7nPTbhcJy88Q==",
+  "dgSpecHash": "y67Rg6f1fYs4MqEet88zxI0TDbIleP0cK/N3qzYIGkFkkwCu5O8JFF4cH2zJaoQ9KCiToEGTVKV/T/lPsV1Xhg==",
   "success": true,
-  "projectFilePath": "Z:\\2023\\Programacion\\Github\\tp2-Bis_Yukelson-Steimberg\\tp2-Bis_Yukelson-Steimberg.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\lyuke\\Desktop\\Proyectos\\ORT\\tp2-Bis_Yukelson-Steimberg\\tp2-Bis_Yukelson-Steimberg.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lyuke\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.15\\microsoft.netcore.app.ref.6.0.15.nupkg.sha512",
+    "C:\\Users\\lyuke\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.15\\microsoft.windowsdesktop.app.ref.6.0.15.nupkg.sha512",
+    "C:\\Users\\lyuke\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.15\\microsoft.aspnetcore.app.ref.6.0.15.nupkg.sha512",
+    "C:\\Users\\lyuke\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.15\\microsoft.netcore.app.host.win-x64.6.0.15.nupkg.sha512"
+  ],
   "logs": []
 }
