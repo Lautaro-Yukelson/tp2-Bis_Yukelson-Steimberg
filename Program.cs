@@ -1,7 +1,5 @@
 ﻿using System;
-
 bool habilitado = false;
-int opcion;
 
 menu();
 
@@ -31,15 +29,25 @@ void menu() {
             break;
         case 3:
             if (habilitado) opcionesPeleas();
-            else Console.WriteLine("No creaste ningun boxeador, por lo tanto podemos hacer ninguna pelea.");
+            else{
+                Console.WriteLine("No creaste ningun boxeador, por lo tanto podemos hacer ninguna pelea.");
+                Console.WriteLine("Presione una tecla para continuar...");
+            } 
+            Console.ReadKey();
+            menu();
             break;
         case 4:
             if (habilitado) editarBoxeador();
             else Console.WriteLine("No creaste ningun boxeador, entonces no podes editar nada.");
+            Console.WriteLine("Presione una tecla para continuar...");
+            Console.ReadKey();
+            menu();
             break;
         case 5:
             Console.Clear();
             Console.WriteLine("Saliendo del programa...");
+            Console.Clear();
+            Environment.Exit(-1);
             break;
     }
 }
@@ -58,7 +66,7 @@ void opcionesPeleas() {
     while (opcion < 1 || opcion > 4) opcion = ingresarEntero("Ingrese una opcion valida!");
     switch (opcion) {
         case 1:
-            peleaFFA(Globales.listaBoxeadores);
+            peleaFFA(Boxeo.listaBoxeadores);
             menu();
             break;
         case 2:
@@ -71,6 +79,8 @@ void opcionesPeleas() {
         case 4:
             Console.Clear();
             Console.WriteLine("Saliendo del programa...");
+            Console.Clear();
+            Environment.Exit(-1);
             break;
     }
 }
@@ -88,7 +98,7 @@ void ingresarAleatorios(){
         Random rnd3 = new Random();
         int vp = rnd3.Next(1, 101);
         Boxeador box = new Boxeador(nombre, pais, peso, pg, vp);
-        Globales.listaBoxeadores.Add(box);
+        Boxeo.listaBoxeadores.Add(box);
     }
 }
 
@@ -106,7 +116,7 @@ void ingresarBoxeadores() {
         int vp = ingresarEntero("¿Cual es su velocidad de piernas?");
         while (vp < 1 || vp > 100) vp = ingresarEntero("Ingrese una velocidad de pierna valia (1-100)");
         Boxeador box = new Boxeador(nombre, pais, peso, pg, vp);
-        Globales.listaBoxeadores.Add(box);
+        Boxeo.listaBoxeadores.Add(box);
     }
 }
 
@@ -114,30 +124,66 @@ void editarBoxeador(){
     Console.Clear();
     string nombreEditar = ingresarTexto("¿Que boxeador quiere editar? | Ingrese 1 para ver los nombres");
     if (nombreEditar == "1"){
-        Console.WriteLine("Ok, estos son sus boxeadores, ingrese el nombre del que desea modificar");
-        for (int i = 0; i<Globales.listaBoxeadores.Count(); i++){
-            Console.Write(Globales.listaBoxeadores[i].Nombre + " - ");
-        }
-        Console.WriteLine(Globales.listaBoxeadores[Globales.listaBoxeadores.Count()-1].Nombre);
-        nombreEditar = Console.ReadLine();
-    }
-    Console.WriteLine("¿Que quiere editar?");
-    Console.WriteLine("1. Potencia del Golpe");
-    Console.WriteLine("2. Velocidad de las Piernas");
-    int opcion = int.Parse(Console.ReadLine());
-    for (int i = 0; i < Globales.listaBoxeadores.Count(); i++) {
-        if (Globales.listaBoxeadores[i].Nombre == nombreEditar) {
-            switch (opcion){
-                case 1:
-                    Globales.listaBoxeadores[i].PotenciaGolpes = ingresarEntero("¿Cual sera la nueva potencia de golpe?");
-                    break;
-                case 2:
-                    Globales.listaBoxeadores[i].VelocidadPiernas = ingresarEntero("¿Cual sera la nueva velocidad de las piernas?");
-                    break;
+        mostrarBoxeadores();
+        nombreEditar = ingresarTexto("Ok, luego de ver los nombres ¿cual es el boxeador que desea editar?");
+    } 
+    bool existe = false;
+    while (!existe){
+        for (int i = 0; i<Boxeo.listaBoxeadores.Count(); i++){
+            if (Boxeo.listaBoxeadores[i].Nombre == nombreEditar){
+                existe = true;
+                break;
             }
         }
+        if (!existe){
+            Console.Clear();
+            mostrarBoxeadores();
+            nombreEditar = ingresarTexto("Ingrese un nombre valido porfavor...");
+        }
     }
-    menu();
+    Console.WriteLine("¿Que quiere editar?");
+    Console.WriteLine("1. Nombre");
+    Console.WriteLine("2. Pais");
+    Console.WriteLine("3. Peso");
+    Console.WriteLine("4. Potencia del Golpe");
+    Console.WriteLine("5. Velocidad de las Piernas");
+    Console.WriteLine("6. Atras");
+    int opcion = int.Parse(Console.ReadLine());
+    while (opcion < 1 || opcion > 6) opcion = ingresarEntero("Ingrese una opcion valida porfavor");
+    for (int i = 0; i < Boxeo.listaBoxeadores.Count(); i++) {
+        if (Boxeo.listaBoxeadores[i].Nombre == nombreEditar) {
+            switch (opcion){
+                case 1:
+                    Boxeo.listaBoxeadores[i].Nombre = ingresarTexto("Ingrese el nuevo nombre");
+                    break;
+                case 2:
+                    Boxeo.listaBoxeadores[i].Pais = ingresarTexto("¿Cual sera su nuevo pais?");
+                    break;
+                case 3:
+                    Boxeo.listaBoxeadores[i].Peso = ingresarEntero("Ingrese lo que sera el nuevo peso");
+                    break;
+                case 4:
+                    Boxeo.listaBoxeadores[i].PotenciaGolpes = ingresarEntero("¿Cual sera la nueva potencia de golpe?");
+                    break;
+                case 5:
+                    Boxeo.listaBoxeadores[i].VelocidadPiernas = ingresarEntero("¿Cual sera la nueva velocidad de las piernas?");
+                    break;
+                case 6:
+                    menu();
+                    break;
+            }
+            break;
+        }
+    }
+}
+
+void mostrarBoxeadores(){
+    Console.Clear();
+    Console.WriteLine("Estos son sus boxeadores, ingrese el nombre del que desea modificar");
+        for (int i = 0; i<Boxeo.listaBoxeadores.Count()-1; i++){
+            Console.Write(Boxeo.listaBoxeadores[i].Nombre + " - ");
+        }
+    Console.WriteLine(Boxeo.listaBoxeadores[Boxeo.listaBoxeadores.Count()-1].Nombre);
 }
 
 void peleaFFA(List<Boxeador> listaParaPelear) {
@@ -164,7 +210,7 @@ void peleaFFA(List<Boxeador> listaParaPelear) {
 void peleaPersonalizada() {
     Console.Clear();
     int n = ingresarEntero("¿De cuantos boxeadores será la pelea?");
-    while (n > Globales.listaBoxeadores.Count()) {
+    while (n > Boxeo.listaBoxeadores.Count()) {
         n = ingresarEntero("Numero invalido. Queres mas boxeadores de los que cargaste antes. Ingrese un numero valido");
     }
     string recordar = (ingresarTexto("Si quiere recordar los nombres escriba SI, de lo contrario escriba NO")).ToLower();
@@ -172,19 +218,19 @@ void peleaPersonalizada() {
         recordar = (ingresarTexto("Opcion invalida. Escriba solo SI o NO para sabe si quiere recordar los nombres")).ToLower();
     }
     if (recordar == "si"){
-        for (int i = 0; i<Globales.listaBoxeadores.Count()-1; i++){
-            Console.Write(Globales.listaBoxeadores[i].Nombre + " - ");
+        for (int i = 0; i<Boxeo.listaBoxeadores.Count()-1; i++){
+            Console.Write(Boxeo.listaBoxeadores[i].Nombre + " - ");
         }
-        Console.WriteLine(Globales.listaBoxeadores[Globales.listaBoxeadores.Count()-1].Nombre);
+        Console.WriteLine(Boxeo.listaBoxeadores[Boxeo.listaBoxeadores.Count()-1].Nombre);
         Console.WriteLine("Presione una tecla para continuar...");
         Console.ReadKey();
     }
     List<Boxeador> listaParaPelear = new List<Boxeador>();
     for (int i = 0; i < n; i++) {
         string nombre = ingresarTexto("Ingrese el nombre del boxeador numero " + (i + 1) + " | Igual que cuando lo creo");
-        for (int x = 0; x < Globales.listaBoxeadores.Count(); x++) {
-            if (Globales.listaBoxeadores[x].Nombre == nombre) {
-                listaParaPelear.Add(Globales.listaBoxeadores[x]);
+        for (int x = 0; x < Boxeo.listaBoxeadores.Count(); x++) {
+            if (Boxeo.listaBoxeadores[x].Nombre == nombre) {
+                listaParaPelear.Add(Boxeo.listaBoxeadores[x]);
             }
         }
     }

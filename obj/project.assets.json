@@ -8,24 +8,31 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\lyuke\\.nuget\\packages\\": {}
+    "C:\\Users\\47434208\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lyuke\\Desktop\\Proyectos\\ORT\\tp2-Bis_Yukelson-Steimberg\\tp2-Bis_Yukelson-Steimberg.csproj",
+      "projectUniqueName": "Z:\\2023\\Programacion\\Github\\tp2-Bis_Yukelson-Steimberg\\tp2-Bis_Yukelson-Steimberg.csproj",
       "projectName": "tp2-Bis_Yukelson-Steimberg",
-      "projectPath": "C:\\Users\\lyuke\\Desktop\\Proyectos\\ORT\\tp2-Bis_Yukelson-Steimberg\\tp2-Bis_Yukelson-Steimberg.csproj",
-      "packagesPath": "C:\\Users\\lyuke\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lyuke\\Desktop\\Proyectos\\ORT\\tp2-Bis_Yukelson-Steimberg\\obj\\",
+      "projectPath": "Z:\\2023\\Programacion\\Github\\tp2-Bis_Yukelson-Steimberg\\tp2-Bis_Yukelson-Steimberg.csproj",
+      "packagesPath": "C:\\Users\\47434208\\.nuget\\packages\\",
+      "outputPath": "Z:\\2023\\Programacion\\Github\\tp2-Bis_Yukelson-Steimberg\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\lyuke\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\47434208\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -54,30 +61,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.15, 6.0.15]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.15, 6.0.15]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.15, 6.0.15]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.15, 6.0.15]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }
